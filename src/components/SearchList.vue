@@ -33,7 +33,7 @@
             href="javascript:void(0);"
           >
             <i
-              :class="selectVal[tabInd][ind].rankFlag === '' ? 'glyphicon-sort' : (selectVal[tabInd][ind].rankFlag === 0 ? 'glyphicon glyphicon-arrow-up' : 'glyphicon glyphicon-arrow-down')"
+              :class="selectVal[tabInd][ind].val === '' ? 'glyphicon-sort' : (selectVal[tabInd][ind].val === 0 ? 'glyphicon glyphicon-arrow-up' : 'glyphicon glyphicon-arrow-down')"
               class="glyphicon "
             >
             </i>
@@ -266,13 +266,13 @@ export default {
     },
     rankFn (ind, val) {
       if (val === '') {
-        this.selectVal[this.tabInd][ind].rankFlag = 0
+        this.selectVal[this.tabInd][ind].val = 0
       } else if (val === 0) {
-        this.selectVal[this.tabInd][ind].rankFlag = 1
+        this.selectVal[this.tabInd][ind].val = 1
       } else if (val === 1) {
-        this.selectVal[this.tabInd][ind].rankFlag = ''
+        this.selectVal[this.tabInd][ind].val = ''
       }
-      this.$emit('head-search-icon-fn', {ind: ind, rankFlag: this.selectVal[this.tabInd][ind].rankFlag, type: 'rank'})
+      this.$emit('head-search-icon-fn', {ind: ind, rankFlag: this.selectVal[this.tabInd][ind].val, type: 'rank'})
     },
     inputBlurFn: function (ind, enterflag) {
       this.$emit('input-blur-fn', {ind: ind, enterflag: enterflag})

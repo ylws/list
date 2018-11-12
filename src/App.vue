@@ -87,8 +87,7 @@ export default {
             val: '',
             show: false,
             txt: '...',
-            realval: -1,
-            rankFlag: ''
+            realval: -1
           },
           {
             val: '',
@@ -212,6 +211,7 @@ export default {
     },
     headSearchIconFn (obj) { // 隐藏搜索项
       if (obj.type === 'rank') {
+        console.log(obj)
         this.selectVal[this.tabInd][obj.ind].val = obj.rankFlag
       }
       for (var i = 0; i < this.selectVal[this.tabInd].length; i++) {
