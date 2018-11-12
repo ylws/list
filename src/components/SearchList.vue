@@ -33,7 +33,7 @@
             href="javascript:void(0);"
           >
             <i
-              :class="rankFlag === '' ? 'glyphicon-sort' : (rankFlag === 0 ? 'glyphicon glyphicon-arrow-up' : 'glyphicon glyphicon-arrow-down')"
+              :class="selectVal[tabInd][ind].rankFlag === '' ? 'glyphicon-sort' : (selectVal[tabInd][ind].rankFlag === 0 ? 'glyphicon glyphicon-arrow-up' : 'glyphicon glyphicon-arrow-down')"
               class="glyphicon "
             >
             </i>
@@ -156,6 +156,7 @@
           </div>
           <div
             v-else
+            :title="item['Hover_' + subitem] ? item['Hover_' + subitem] : item[subitem]"
             class="table-cell"
           >
             {{item[subitem]}}
@@ -190,8 +191,7 @@ export default {
   data () {
     return {
       checkAll: false,
-      checkObj: {},
-      rankFlag: ''
+      checkObj: {}
     }
   },
   props: {
@@ -265,16 +265,14 @@ export default {
       this.$emit('head-search-icon-fn', {ind: ind})
     },
     rankFn (ind, val) {
-      this.rankFlag = ''
       if (val === '') {
-        this.rankFlag = 0
+        this.selectVal[this.tabInd][ind].rankFlag = 0
       } else if (val === 0) {
-        this.rankFlag = 1
-      } else if (val === 2) {
-        this.rankFlag = ''
+        this.selectVal[this.tabInd][ind].rankFlag = 1
+      } else if (val === 1) {
+        this.selectVal[this.tabInd][ind].rankFlag = ''
       }
-      console.log(this.rankFlag, '---')
-      this.$emit('head-search-icon-fn', {ind: ind, rankFlag: this.rankFlag, type: 'rank'})
+      this.$emit('head-search-icon-fn', {ind: ind, rankFlag: this.selectVal[this.tabInd][ind].rankFlag, type: 'rank'})
     },
     inputBlurFn: function (ind, enterflag) {
       this.$emit('input-blur-fn', {ind: ind, enterflag: enterflag})

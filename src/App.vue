@@ -87,7 +87,8 @@ export default {
             val: '',
             show: false,
             txt: '...',
-            realval: -1
+            realval: -1,
+            rankFlag: ''
           },
           {
             val: '',
@@ -142,6 +143,7 @@ export default {
       rulename: 'rulename',
       HTML_keywords: '<a>words</a>',
       replycontent: 'adsf',
+      Hover_replycontent: 'adsf777',
       opt: [{
         ev: 'detail',
         val: '详情',
