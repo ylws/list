@@ -48,7 +48,7 @@
             href="javascript:void(0);"
           >
             <i
-              :class="basicInfo.listheadsearch[tabInd][ind] === 'input' ?  ' glyphicon-search' : (basicInfo.listheadsearch[tabInd][ind] === 'check' ? '' : 'glyphicon-filter')"
+              :class="(basicInfo.listheadsearch[tabInd][ind] === 'input' || basicInfo.listheadsearch[tabInd][ind].type === 'input') ?  ' glyphicon-search' : (basicInfo.listheadsearch[tabInd][ind] === 'check' ? '' : 'glyphicon-filter')"
               class="glyphicon"
             >
             </i>

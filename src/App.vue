@@ -69,7 +69,10 @@ export default {
               type: 'input',
               typeVal: 'number'
             },
-            'input',
+            {
+              type: 'input',
+              typeVal: 'number'
+            },
             '',
             'opt'
           ]
@@ -231,7 +234,7 @@ export default {
       if (obj.enterflag && obj.enterflag === 'enter') {
         this.selectVal[this.tabInd][obj.ind].show = false
       }
-      if (this.basicInfo.listheadsearch[this.tabInd][obj.ind] === 'input') { // input处理
+      if (this.basicInfo.listheadsearch[this.tabInd][obj.ind] === 'input' || this.basicInfo.listheadsearch[this.tabInd][obj.ind].type === 'input') { // input处理
         this.selectVal[this.tabInd][obj.ind]['txt'] = this.selectVal[this.tabInd][obj.ind].val
         if (this.selectVal[this.tabInd][obj.ind]['txt'].replace(/\s/gi, '') === '') {
           this.selectVal[this.tabInd][obj.ind]['txt'] = ''
