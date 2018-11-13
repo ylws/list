@@ -73,7 +73,7 @@ export default {
               type: 'input',
               typeVal: 'number'
             },
-            '',
+            'rank',
             'opt'
           ]
         ]
