@@ -6,6 +6,7 @@
       :tabInd= "tabInd"
       :selectVal="selectVal"
       :pageNum="pageNum"
+      :init-check-array="initCheckArray"
       @delete-fn="deleteFn"
       @check-val-fn="checkValFn"
       @input-blur-fn="inputBlurFn"
@@ -50,6 +51,7 @@ export default {
       pagefalse: true,
       pageNum: 2, // 当前页总共多少条，用于判定是否全选
       listArray: [],
+      initCheckArray: [2],
       basicInfo: {
         searchtxt: '查询',
         jsonopt: [ // 接口列表展示字段 全部 待处理 已处理

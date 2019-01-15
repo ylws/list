@@ -202,6 +202,13 @@ export default {
       }
     },
 
+    initCheckArray: { // 分页数据
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+
     tabInd: { // 配置项索引
       type: Number,
       default: 0
@@ -311,9 +318,24 @@ export default {
           }
         }
       }
+    },
+    setInitCheckVal () {
+      for (let item = 0; item < this.initCheckArray.length; item++) {
+        this.$set(this.checkObj, this.initCheckArray[item], true)
+      }
+      let count = 0
+      for (var i = 0; i < this.listArray.length; i++) {
+        if (this.checkObj[this.listArray[i].id]) {
+          count++
+        }
+      }
+      if (count === this.listArray.length) {
+        this.checkAll = true
+      }
     }
   },
   mounted () {
+    this.setInitCheckVal()
     var that = this
     document.addEventListener('click', function (e) {
       var ev = window.event || e
