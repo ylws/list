@@ -13,6 +13,7 @@
       @check-all-fn="checkAllFn"
       @head-search-icon-fn="headSearchIconFn"
       @opt-event-fn="optEventFn"
+      ref="list"
     />
     <Page
       :pageVal="pageVal"
@@ -141,6 +142,10 @@ export default {
         ev: 'del',
         val: '删除',
         class: 'opt'
+      }, {
+        ev: 'check',
+        val: '测试check',
+        class: 'opt'
       }]
     }, {
       id: '2',
@@ -207,6 +212,11 @@ export default {
     },
     optEventFn (obj) { // 增删改查操作 obj包含索引，dom,和该条数据项{ind: ind, ev: ev, item: item}
       console.log(obj)
+      if (obj.ev === 'check') {
+        console.log('check')
+        this.initCheckArray.push(1)
+        console.log(this.$refs.list.setInitCheckVal())
+      }
     },
     checkValFn (obj) {
       console.log(obj, '包含单选的所有值和全选的value值')
