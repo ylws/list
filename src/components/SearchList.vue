@@ -320,19 +320,24 @@ export default {
       }
     },
     setInitCheckVal () {
-      for (let item = 0; item < this.initCheckArray.length; item++) {
-        this.$set(this.checkObj, this.initCheckArray[item], true)
-      }
-      let count = 0
-      for (var i = 0; i < this.listArray.length; i++) {
-        if (this.checkObj[this.listArray[i].id]) {
-          count++
-        }
-      }
-      if (count === this.listArray.length) {
-        this.checkAll = true
-      } else {
+      if (this.initCheckArray.length === 0) {
+        this.checkObj = {}
         this.checkAll = false
+      } else {
+        for (let item = 0; item < this.initCheckArray.length; item++) {
+          this.$set(this.checkObj, this.initCheckArray[item], true)
+        }
+        let count = 0
+        for (var i = 0; i < this.listArray.length; i++) {
+          if (this.checkObj[this.listArray[i].id]) {
+            count++
+          }
+        }
+        if (count === this.listArray.length) {
+          this.checkAll = true
+        } else {
+          this.checkAll = false
+        }
       }
     }
   },
