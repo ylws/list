@@ -331,6 +331,8 @@ export default {
       }
       if (count === this.listArray.length) {
         this.checkAll = true
+      } else {
+        this.checkAll = false
       }
     }
   },
