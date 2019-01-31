@@ -12,6 +12,7 @@
       @check-all-fn="checkAllFn"
       @head-search-icon-fn="headSearchIconFn"
       @opt-event-fn="optEventFn"
+      @init-check-result="initCheckresult"
       ref="list"
     />
     <Page
@@ -172,6 +173,9 @@ export default {
     Page
   },
   methods: {
+    initCheckresult (res) {
+      console.log(res, '999')
+    },
     pageListFn () {
       console.log('重新查询接口')
       this.listArray = []

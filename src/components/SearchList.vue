@@ -345,6 +345,7 @@ export default {
       if (id) {
         delete this.checkObj[id]
       }
+      this.$emit('init-check-result', {checkval: this.checkObj})
     }
   },
   mounted () {
