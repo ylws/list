@@ -173,6 +173,7 @@ export default {
   methods: {
     pageListFn () {
       console.log('重新查询接口')
+      this.listArray = []
       /*
         分页处理接口查询
         需提供总条数以及当前页返回的数据项

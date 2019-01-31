@@ -201,7 +201,6 @@ export default {
         return []
       }
     },
-
     initCheckArray: { // 分页数据
       type: Array,
       default: () => {
@@ -337,7 +336,7 @@ export default {
             count++
           }
         }
-        if (count === this.listArray.length) {
+        if (count === this.listArray.length && this.listArray.length !== 0) {
           this.checkAll = true
         } else {
           this.checkAll = false
@@ -356,6 +355,12 @@ export default {
         }
       })
     })
+  },
+  watch: {
+    listArray: function (newval, oldval) {
+      console.log(233)
+      this.setInitCheckVal()
+    }
   }
 }
 </script>
