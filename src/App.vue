@@ -5,7 +5,6 @@
       :listArray="listArray"
       :tabInd= "tabInd"
       :selectVal="selectVal"
-      :pageNum="pageNum"
       :init-check-array="initCheckArray"
       @delete-fn="deleteFn"
       @check-val-fn="checkValFn"
@@ -46,11 +45,10 @@ export default {
       pageShow: 8,
       showPage: '',
       pageVal: 1,
-      pagesize: 20,
+      pagesize: 1,
       totalPage: 1,
       totalNum: 2,
       pagefalse: true,
-      pageNum: 2, // 当前页总共多少条，用于判定是否全选
       listArray: [],
       initCheckArray: [2],
       basicInfo: {

@@ -324,6 +324,7 @@ export default {
         this.checkObj = {}
         this.checkAll = false
       } else {
+        this.checkAll = false
         for (let keys in this.checkObj) {
           this.checkObj[keys] = false
         }
