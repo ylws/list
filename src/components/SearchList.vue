@@ -318,7 +318,7 @@ export default {
         }
       }
     },
-    setInitCheckVal (param) {
+    setInitCheckVal (id) {
       if (this.initCheckArray.length === 0) {
         this.checkObj = {}
         this.checkAll = false
@@ -341,6 +341,9 @@ export default {
         } else {
           this.checkAll = false
         }
+      }
+      if (id) {
+        delete this.checkObj[id]
       }
     }
   },

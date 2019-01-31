@@ -50,7 +50,7 @@ export default {
       totalNum: 2,
       pagefalse: true,
       listArray: [],
-      initCheckArray: [2],
+      initCheckArray: [],
       basicInfo: {
         searchtxt: '查询',
         jsonopt: [ // 接口列表展示字段 全部 待处理 已处理
@@ -165,6 +165,7 @@ export default {
         class: 'opt'
       }]
     }]
+    this.initCheckArray.push(2)
   },
   components: {
     List,
