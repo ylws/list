@@ -243,7 +243,7 @@ export default {
           }
         }
       }
-      if (count === this.pageNum) {
+      if (count === this.listArray.length) {
         this.checkAll = true
       } else {
         this.checkAll = false
