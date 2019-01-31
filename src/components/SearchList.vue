@@ -262,7 +262,7 @@ export default {
           this.checkAll = false
         }
       }
-      this.$emit('check-all-fn', {checkall: this.checkAll})
+      this.$emit('check-all-fn', {checkall: this.checkAll, checkval: this.checkObj})
     },
     optEventFn (ind, ev, item, id) {
       this.$emit('opt-event-fn', {ind: ind, ev: ev, item: item, id: id})
@@ -318,15 +318,15 @@ export default {
         }
       }
     },
-    setInitCheckVal () {
+    setInitCheckVal (param) {
       if (this.initCheckArray.length === 0) {
         this.checkObj = {}
         this.checkAll = false
       } else {
         this.checkAll = false
-        for (let keys in this.checkObj) {
-          this.checkObj[keys] = false
-        }
+        // for (let keys in this.checkObj) {
+        //   this.$set(this.checkObj, keys, false)
+        // }
         for (let item = 0; item < this.initCheckArray.length; item++) {
           this.$set(this.checkObj, this.initCheckArray[item], true)
         }
@@ -345,7 +345,9 @@ export default {
     }
   },
   mounted () {
-    this.setInitCheckVal()
+    if (this.basicInfo.jsonopt[this.tabInd].toString().indexOf('check,') >= 0) {
+      this.setInitCheckVal()
+    }
     var that = this
     document.addEventListener('click', function (e) {
       var ev = window.event || e
@@ -358,8 +360,20 @@ export default {
   },
   watch: {
     listArray: function (newval, oldval) {
-      console.log(233)
-      this.setInitCheckVal()
+      if (this.basicInfo.jsonopt[this.tabInd].toString().indexOf('check,') >= 0) {
+        this.checkAll = false
+        let count = 0
+        for (var i = 0; i < this.listArray.length; i++) {
+          if (this.checkObj[this.listArray[i].id]) {
+            count++
+          }
+        }
+        if (count === this.listArray.length && this.listArray.length !== 0) {
+          this.checkAll = true
+        } else {
+          this.checkAll = false
+        }
+      }
     }
   }
 }

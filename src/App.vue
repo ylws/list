@@ -45,7 +45,7 @@ export default {
       pageShow: 8,
       showPage: '',
       pageVal: 1,
-      pagesize: 1,
+      pagesize: 2,
       totalPage: 1,
       totalNum: 2,
       pagefalse: true,
