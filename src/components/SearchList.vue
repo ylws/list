@@ -324,6 +324,9 @@ export default {
         this.checkObj = {}
         this.checkAll = false
       } else {
+        for (let keys in this.checkObj) {
+          this.checkObj[keys] = false
+        }
         for (let item = 0; item < this.initCheckArray.length; item++) {
           this.$set(this.checkObj, this.initCheckArray[item], true)
         }
