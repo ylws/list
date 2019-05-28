@@ -138,7 +138,7 @@
         >
           <input
             v-model="checkObj[item.id]"
-            :disabled="forbidArr.toString().indexOf(item.id.toString()) >= 0"
+            :disabled="forbidArr.indexOf(item.id) >= 0"
             @change="checkChangeFn(item.id)"
             type="checkbox"
           />
