@@ -138,6 +138,7 @@
         >
           <input
             v-model="checkObj[item.id]"
+            :disabled="item.id.toString().indexOf(forbidArr.toString()) >= 0"
             @change="checkChangeFn(item.id)"
             type="checkbox"
           />
@@ -195,6 +196,12 @@ export default {
     }
   },
   props: {
+    forbidArr: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
     listArray: { // 分页数据
       type: Array,
       default: () => {

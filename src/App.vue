@@ -6,6 +6,7 @@
       :tabInd= "tabInd"
       :selectVal="selectVal"
       :init-check-array="initCheckArray"
+      :forbidArr="initCheckArray"
       @delete-fn="deleteFn"
       @check-val-fn="checkValFn"
       @input-blur-fn="inputBlurFn"
