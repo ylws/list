@@ -18,6 +18,7 @@
           >
             <input
               v-model="checkAll"
+              :disabled="forbidArr.length > 0"
               @change="checkAllFn"
               type="checkbox"
             />
