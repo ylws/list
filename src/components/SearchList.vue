@@ -2,7 +2,7 @@
   <table
     id="item_table"
     class="list-table table table-striped table-bordered table-hover end-data-table"
-  >
+  >{{forbidArr}}
     <thead>
       <tr>
         <th
