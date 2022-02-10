@@ -78,7 +78,7 @@
     "webpack-merge": "^4.1.0",
     "less": "^3.8.1",
     "less-loader": "^4.0.5",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "sass": "^1.13.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
